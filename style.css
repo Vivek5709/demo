@@ -263,6 +263,13 @@ header .nav-links a:hover {
     transform: translateY(0);
 }
 
+#scrollCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
 /* MOBILE FIX */
 @media (max-width: 768px) {
     .history-section {

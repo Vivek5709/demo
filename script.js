@@ -1,220 +1,188 @@
+/* ---------------- LOGO REVEAL ---------------- */
+const logos = document.querySelectorAll(".logos img");
 
-        const logos = document.querySelectorAll(".logos img");
+function revealLogos() {
+  logos.forEach((logo) => {
+    const pos = logo.getBoundingClientRect().top;
+    const screen = window.innerHeight;
+    if (pos < screen - 60) logo.classList.add("show");
+  });
+}
+window.addEventListener("scroll", revealLogos);
+revealLogos();
 
-        function revealLogos() {
-            logos.forEach((logo) => {
-                const pos = logo.getBoundingClientRect().top;
-                const screen = window.innerHeight;
-
-                if (pos < screen - 60) {
-                    logo.classList.add("show");
-                }
-            });
-        }
-
-        window.addEventListener("scroll", revealLogos);
-        revealLogos();  // run on load
-
+/* ---------------- NAV TOGGLE ---------------- */
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
+const closeNav = document.querySelector(".close-nav");
 
 hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+  navLinks.classList.toggle("active");
+});
+closeNav.addEventListener("click", () => {
+  navLinks.classList.remove("active");
 });
 
+/* ---------------- FADE-UP SECTIONS ---------------- */
 function revealHistory() {
-    document.querySelectorAll(".fade-up").forEach((el) => {
-        const pos = el.getBoundingClientRect().top;
-        const screen = window.innerHeight;
-        if (pos < screen - 60) el.classList.add("visible");
-    });
+  document.querySelectorAll(".fade-up").forEach((el) => {
+    const pos = el.getBoundingClientRect().top;
+    if (pos < window.innerHeight - 60) el.classList.add("visible");
+  });
 }
 window.addEventListener("scroll", revealHistory);
 revealHistory();
 
-
-const counters = document.querySelectorAll('.count');
+/* ---------------- COUNTERS ---------------- */
+const counters = document.querySelectorAll(".count");
 let started = false;
 
 function runCounter() {
   counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
+    const target = +counter.dataset.target;
     let current = 0;
-    const speed = target / 100;
+    const step = target / 100;
 
-    const updateCount = () => {
+    function update() {
       if (current < target) {
-        current += speed;
+        current += step;
         counter.innerText = Math.floor(current).toLocaleString() + "+";
-        requestAnimationFrame(updateCount);
+        requestAnimationFrame(update);
       } else {
         counter.innerText = target.toLocaleString() + "+";
       }
-    };
-    updateCount();
+    }
+    update();
   });
 }
 
-const observer = new IntersectionObserver(entries => {
+const counterObserver = new IntersectionObserver(entries => {
   if (entries[0].isIntersecting && !started) {
     runCounter();
     started = true;
   }
 });
-observer.observe(document.querySelector('.stats-strip'));
+counterObserver.observe(document.querySelector(".stats-strip"));
 
+/* ---------------- SEVENR HEADING + CARDS ---------------- */
+(function () {
+  const heading = document.querySelector(".sevenr-heading");
+  const cards = document.querySelectorAll(".sevenr-card");
 
-// Scroll animation for heading + cards
-  (function () {
-    const heading = document.querySelector(".sevenr-heading");
-    const cards = document.querySelectorAll(".sevenr-card");
-
-    if (!("IntersectionObserver" in window)) {
-      // Fallback: show everything if browser doesn't support IO
-      heading && heading.classList.add("visible");
-      cards.forEach(card => card.classList.add("visible"));
-      return;
-    }
-
-    const options = { threshold: 0.15 };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (entry.target.classList.contains("sevenr-heading")) {
-            entry.target.classList.add("visible");
-          } else if (entry.target.classList.contains("sevenr-card")) {
-            // add a small delay based on index for staggered effect
-            const index = Array.from(cards).indexOf(entry.target);
-            entry.target.style.transitionDelay = (0.1 * index) + "s";
-            entry.target.classList.add("visible");
-          }
-          observer.unobserve(entry.target);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains("sevenr-heading")) {
+          entry.target.classList.add("visible");
+        } else {
+          const i = [...cards].indexOf(entry.target);
+          entry.target.style.transitionDelay = `${0.1 * i}s`;
+          entry.target.classList.add("visible");
         }
-      });
-    }, options);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
 
-    if (heading) observer.observe(heading);
-    cards.forEach(card => observer.observe(card));
-  })();
+  heading && observer.observe(heading);
+  cards.forEach(card => observer.observe(card));
+})();
+
+/* ---------------- CHAT WAVE ---------------- */
+function openChatWithWave() {
+  const overlay = document.getElementById("chat-wave-overlay");
+  const icon = document.getElementById("chat-launcher");
+  const rect = icon.getBoundingClientRect();
+
+  const wave = document.createElement("div");
+  wave.className = "wave-circle";
+  wave.style.left = `${rect.left + rect.width / 2}px`;
+  wave.style.top = `${rect.top + rect.height / 2}px`;
+  overlay.appendChild(wave);
+
+  const size = Math.max(innerWidth, innerHeight) * 2;
+  setTimeout(() => {
+    wave.style.width = wave.style.height = `${size}px`;
+  }, 10);
+
+  setTimeout(() => {
+    location.href = "frontend/index.html";
+  }, 600);
+}
+
+/* =====================================================
+   SCROLL IMAGE SEQUENCE (REPLACED VIDEO LOGIC)
+   ===================================================== */
+
+const textPanel = document.querySelector(".text-panel");
+const canvas = document.getElementById("scrollCanvas");
+const ctx = canvas.getContext("2d");
+
+const totalFrames = 90;
+const frames = [];
+let currentFrame = 0;
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 
 
-  function openChatWithWave() {
-    const overlay = document.getElementById("chat-wave-overlay");
-    const icon = document.getElementById("chat-launcher");
+const framePath = "images/frames/";
 
-    const rect = icon.getBoundingClientRect();
-
-    const wave = document.createElement("div");
-    wave.classList.add("wave-circle");
-    wave.style.left = `${rect.left + rect.width / 2}px`;
-    wave.style.top = `${rect.top + rect.height / 2}px`;
-    overlay.appendChild(wave);
-
-    const size = Math.max(window.innerWidth, window.innerHeight) * 2;
-
-    setTimeout(() => {
-        wave.style.width = `${size}px`;
-        wave.style.height = `${size}px`;
-    }, 10);
-
-    setTimeout(() => {
-        window.location.href = "frontend/index.html"; // ✨ Chat page path here
-    }, 600);
+for (let i = 1; i <= totalFrames; i++) {
+  const img = new Image();
+img.src = framePath + `frame_${String(i).padStart(3, "0")}.webp`;
+  frames.push(img);
 }
 
 
+function drawFrame(i) {
+  const img = frames[i];
+  if (!img || !img.complete) return;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+}
 
-const textPanel = document.querySelector('.text-panel');
-const video = document.getElementById('scrollVideo');
-
-let prevScroll = 0;
-
-textPanel.addEventListener('scroll', () => {
-  const maxScroll = textPanel.scrollHeight - textPanel.clientHeight;
-  const scrollPos = textPanel.scrollTop;
-  const scrollProgress = scrollPos / maxScroll;
-
-  video.currentTime = scrollProgress * video.duration;
-
-  if (scrollPos > prevScroll) {
-    video.playbackRate = 1;
-  } else {
-    video.playbackRate = -1;
+let ticking = false;
+textPanel.addEventListener("scroll", () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const maxScroll = textPanel.scrollHeight - textPanel.clientHeight;
+      const progress = textPanel.scrollTop / maxScroll;
+      const index = Math.min(
+        totalFrames - 1,
+        Math.floor(progress * totalFrames)
+      );
+      if (index !== currentFrame) {
+        currentFrame = index;
+        drawFrame(currentFrame);
+      }
+      ticking = false;
+    });
+    ticking = true;
   }
-
-  video.play();
-  prevScroll = scrollPos;
 });
 
-let timer;
-textPanel.addEventListener('scroll', () => {
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    video.pause();
-  }, 80);
-});
-
-const closeNav = document.querySelector(".close-nav");
-
-closeNav.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-});
-
-
-const circularObserver = new IntersectionObserver((entries)=>{
-  entries.forEach((entry)=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("appear");
-    }
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll(".fade-css").forEach(el=>{
-  circularObserver.observe(el);
-});
-
-
-(function(){
-
-  // --- REAL 100% Reliable Mobile/Tablet Detection ---
+/* ---------------- AUTO SCROLL TO NEXT SECTION (DESKTOP ONLY) ---------------- */
+(function () {
   const ua = navigator.userAgent.toLowerCase();
-  const isMobile =
-    ua.includes("iphone") ||
-    ua.includes("android") ||
-    ua.includes("ipad") ||
-    ua.includes("ipod");
+  if (/iphone|android|ipad|ipod/.test(ua)) return;
 
-  if (isMobile) {
-    console.log("Mobile detected → Auto-scroll OFF");
-    return;
-  }
-
-  console.log("Desktop detected → Auto-scroll ON");
-
-  const panel = document.querySelector('.panel1');
-  const nextSection = document.querySelector('.sevenr-intro');
-
-  if (!panel || !nextSection) return;
-
+  const panel = document.querySelector(".panel1");
+  const next = document.querySelector(".sevenr-intro");
   let atBottom = false;
 
-  panel.addEventListener('wheel', function(e){
-    const maxScroll = panel.scrollHeight - panel.clientHeight;
-    const current = panel.scrollTop;
-
-    if (e.deltaY > 0) {
-      if (current >= maxScroll - 2) {
-        if (!atBottom) {
-          atBottom = true;
-        } else {
-          nextSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        atBottom = false;
-      }
+  panel.addEventListener("wheel", e => {
+    const max = panel.scrollHeight - panel.clientHeight;
+    if (e.deltaY > 0 && panel.scrollTop >= max - 2) {
+      if (atBottom) next.scrollIntoView({ behavior: "smooth" });
+      atBottom = true;
+    } else {
+      atBottom = false;
     }
   }, { passive: true });
-
 })();
