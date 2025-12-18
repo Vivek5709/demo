@@ -745,20 +745,22 @@ header .nav-links a:hover {
 .video-wrap {
   position: absolute;
   right: 0;
-  top: 50%;
-  width: 55%;
+  top: 10%;
+  width: 50%;
   height: 80%;
-  transform: translateY(-50%);
+  transform: translateY(100px);
   border-radius: 20px;
   overflow: hidden;
-  
+  border-radius: 170px;
+  transform: translateX(-100px);
+   margin-bottom: 150px;
 }
 
-.video-wrap video {
-  width: 70%;
+#scrollCanvas{
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 170px;
+  border-radius: 200px;
   margin-left: 80px;
   margin-bottom: 150px;
   
@@ -842,15 +844,21 @@ header .nav-links a:hover {
     position: absolute;
     top: 0;
     right: -20%;           /* shift slightly so video covers more area */
-    width: 150%;           /* bigger so background is filled */
+    width: 200%;           /* bigger so background is filled */
     height: 100%;
     transform: none;       /* remove desktop vertical centering */
     border-radius: 0;
+    margin-left: 50vh;
   }
 
-  .video-wrap video {
+  .text-block:nth-of-type(2) {
+          bottom: 50%;  /* styles only for 2nd text-block */
+}
+
+
+  #scrollCanvas {
     margin-top: 15vh;
-    margin-left: 25vh;
+    margin-left: 40vh;
     width: 60%;
     height: 60%;
     object-fit: cover;     /* makes video true background */

@@ -139,13 +139,39 @@ img.src = framePath + `frame_${String(i).padStart(3, "0")}.webp`;
   frames.push(img);
 }
 
-
-function drawFrame(i) {
-  const img = frames[i];
+function drawFrame(index) {
+  const img = frames[index];
   if (!img || !img.complete) return;
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+  const cw = canvas.width;
+  const ch = canvas.height;
+
+  const iw = img.naturalWidth;
+  const ih = img.naturalHeight;
+
+  const canvasRatio = cw / ch;
+  const imgRatio = iw / ih;
+
+  let drawWidth, drawHeight, offsetX, offsetY;
+
+  if (imgRatio > canvasRatio) {
+    // image is wider → crop sides
+    drawHeight = ch;
+    drawWidth = ch * imgRatio;
+    offsetX = (cw - drawWidth) / 2;
+    offsetY = 0;
+  } else {
+    // image is taller → crop top/bottom
+    drawWidth = cw;
+    drawHeight = cw / imgRatio;
+    offsetX = 0;
+    offsetY = (ch - drawHeight) / 2;
+  }
+
+  ctx.clearRect(0, 0, cw, ch);
+  ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
 }
+
 
 let ticking = false;
 textPanel.addEventListener("scroll", () => {
