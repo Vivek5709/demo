@@ -199,7 +199,7 @@ textPanel.addEventListener("scroll", () => {
   if (/iphone|android|ipad|ipod/.test(ua)) return;
 
   const panel = document.querySelector(".panel1");
-  const next = document.querySelector(".sevenr-intro");
+  const next = document.getElementById("rr-intro");
   let atBottom = false;
 
   panel.addEventListener("wheel", e => {
@@ -212,3 +212,18 @@ textPanel.addEventListener("scroll", () => {
     }
   }, { passive: true });
 })();
+
+
+
+
+const fadeItems = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+fadeItems.forEach(item => observer.observe(item));

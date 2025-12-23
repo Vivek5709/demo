@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Rajratan Group</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Canonical Link -->
+<link rel="canonical" href="https://rajratan.in/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images\header logo.png">
+
+<!-- Search Engine Robots -->
+<meta name="robots" content="index, follow">
+
+<!-- Author -->
+<meta name="author" content="Rajratan Group">
+
+<!-- About Us Page SEO -->
+<title>About Rajratan Group | Leaders in Waste Recycling & Green Innovation</title>
+
+<meta name="description" content="Learn about Rajratan Group's journey from 1973 to becoming a leader in waste recycling, green technology, and sustainable manufacturing in India.">
+
+<meta name="keywords" content="About Rajratan, Rajratan Group history, waste recycling company India, sustainable technology, environmental solutions">
+
+<meta property="og:title" content="About Rajratan Group | Waste Recycling Innovators">
+<meta property="og:description" content="Discover the legacy, leadership, and vision behind Rajratan Group’s pioneering work in sustainable and circular manufacturing.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rajratan.in/about">
+<meta property="og:image" content="https://rajratan.in/assets/about-og.jpg">
+
+
+
+<style>
+:root {
+    --navy: #0a0f2d;
+    --white: #ffffff;
+    --gold: #f7c873;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+
+body { background: var(--navy); color: var(--white); overflow-x: hidden;}
+
+/* HEADER */
+header {
+    width: 100%; padding: 20px 50px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--navy); position: sticky; top: 0; z-index: 100;
+     border-bottom:1px solid #f7c873;
+}
+header img { height: 50px; }
+header .btn {
+    padding: 10px 20px;
+    background: transparent; color: var(--gold);
+    border: 2px solid var(--gold); border-radius: 6px;
+    cursor: pointer; transition: .3s;
+}
+header .btn:hover { background: var(--gold); color: var(--navy); }
+
+
+/* FOOTER */
+.footer {
+    background: var(--white);
+    padding: 60px 10%;
+    color: var(--white);
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    height: 150px;
+}
+
+.footer h3 {
+    color: var(--gold);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer a {
+    font-size: 15px;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--gold);
+}
+
+/* Social Icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+.footer-social img {
+    width: 26px;
+     transition: 0.3s ease;
+    filter: brightness(0) saturate(100%) 
+            invert(8%) sepia(20%) saturate(2300%) 
+            hue-rotate(215deg) brightness(90%) contrast(95%);
+}
+
+.footer-social img:hover {
+    transform: scale(1.15);
+     filter: brightness(0) saturate(100%) 
+            invert(75%) sepia(45%) saturate(550%) 
+            hue-rotate(358deg) brightness(100%) contrast(95%);
+}
+
+/* Fade Animation */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s ease-out;
+}
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+    header { padding: 15px 20px; }
+    .about-hero h1 { font-size: 32px; }
+    .about-section { padding: 60px 20px; }
+    .footer-content { text-align: center; }
+}
+
+@media (max-width: 768px) {
+    header img {
+        height: 40px;
+        width: 35%;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .logos img {
+        width: 80%;
+        height: auto;
+    }
+
+    .testimonials {
+        padding: 60px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .logos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    header {
+        padding: 12px 18px;
+    }
+
+    header img {
+        height: 35px;
+    }
+}
+
+/* NAVIGATION */
+header .nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+header .nav-links a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+header .nav-links a:hover {
+    color: var(--gold);
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        background: var(--navy);
+        flex-direction: column;
+        padding-top: 100px;
+        gap: 25px;
+        transition: 0.4s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: block;
+        color: var(--gold);
+    }
+
+    header .btn {
+        width: 150px;
+        text-align: center;
+    }
+}
+
+#active{
+    color: #f7c873;
+}
+
+/* Footer Mobile Responsive */
+@media (max-width: 900px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        width: 100%;
+    }
+
+    .footer-logo {
+        height: 70px;
+    }
+
+    .footer p, .footer a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 40px 8%;
+    }
+
+    .footer-logo {
+        height: 60px;
+    }
+
+    .footer h3 {
+        font-size: 16px;
+    }
+
+    .footer p, .footer a {
+        font-size: 13px;
+    }
+
+    .footer-social img {
+        width: 22px;
+    }
+}
+
+
+  /* Transparent fullscreen overlay */
+#chat-wave-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+
+
+/* Floating Chat Icon */
+#chat-launcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #f7c873;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100000;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: 0.2s ease-in-out;
+}
+
+#chat-launcher:hover {
+  transform: scale(1.1);
+}
+
+/* Close (X) button inside mobile menu */
+.close-nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    color: var(--gold);
+    cursor: pointer;
+    display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+    .close-nav {
+        display: block;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    
+        <img src="C:\Users\Vivek\Downloads\header-logo-removebg-preview.png" width="14%" height="20%" alt="logo">  <!-- your logo here -->
+
+    <nav class="nav-links">
+        <span class="close-nav">&times;</span>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="newslatter.html" id="active">Newsroom</a>
+            
+        <button class="btn" onclick="window.location.href='get-sample.html'">
+    Get a Sample
+</button>
+
+    </nav>
+
+    <div class="hamburger">
+        ☰
+    </div>
+</header>
+
+<!-- FOOTER -->
+<footer class="footer fade-up">
+
+    <div class="footer-content">
+        <div class="footer-left">
+            <img src="images\Rajratan Logo High Pixel (6).png" alt="Rajratan Logo" class="footer-logo">
+        </div>
+
+        <div class="footer-center">
+            <h3>ADDRESS</h3>
+            <p>1st Floor 123-124, Shastri Market,<br>
+            Shastri Market, Indore, Madhya Pradesh 452007</p>
+        </div>
+
+        <div class="footer-right">
+            <h3>CONTACT</h3>
+            <p><a href="mailto:response@rajratan.in">response@rajratan.in</a><br>
+            <a href="mailto:info@rajratan.in">info@rajratan.in</a></p>
+            <p><a href="tel:+919685927927">+91 9685 927 927</a><br>
+            <a href="tel:+919893027744">+91 98930 27744</a></p>
+        </div>
+    </div>
+
+     <div class="footer-social">
+       <a href="https://www.facebook.com/share/16d88NDfY2/"><img src="images\meta.png" alt="facebook"></a>
+        <a href="https://x.com/Rajratangroup?s=20"><img src="images\x.png" alt="twitter"></a>
+        <a href="https://www.instagram.com/rajratanindia?igsh=MTZtNDBkM2R6c3B6eA=="><img src="images\Screenshot 2025-11-26 160452.png" alt="instagram"></a>
+        <a href="https://youtube.com/@rajratanindia?feature=shared"><img src="images\youtube.png" alt="youtube"></a>
+    </div>
+
+</footer>
+
+<!-- Transparent Overlay -->
+<div id="chat-wave-overlay"></div>
+
+<!-- Floating Chat Icon -->
+<div id="chat-launcher" onclick="openChatWithWave()">💬</div>
+
+<script>
+function revealScroll(){
+    document.querySelectorAll(".fade-up").forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 70){
+            el.classList.add("visible");
+        }
+    });
+}
+window.addEventListener("scroll", revealScroll);
+revealScroll();
+
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+
+
+
+  function openChatWithWave() {
+    const overlay = document.getElementById("chat-wave-overlay");
+    const icon = document.getElementById("chat-launcher");
+
+    const rect = icon.getBoundingClientRect();
+
+    const wave = document.createElement("div");
+    wave.classList.add("wave-circle");
+    wave.style.left = `${rect.left + rect.width / 2}px`;
+    wave.style.top = `${rect.top + rect.height / 2}px`;
+    overlay.appendChild(wave);
+
+    const size = Math.max(window.innerWidth, window.innerHeight) * 2;
+
+    setTimeout(() => {
+        wave.style.width = `${size}px`;
+        wave.style.height = `${size}px`;
+    }, 10);
+
+    setTimeout(() => {
+        window.location.href = "frontend/index.html"; // ✨ Chat page path here
+    }, 600);
+}
+
+const closeNav = document.querySelector(".close-nav");
+
+closeNav.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+});
+
+</script>
+
+</body>
+</html>

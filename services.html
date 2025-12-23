@@ -48,7 +48,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
 
-body { background: var(--navy); color: var(--white); }
+body { background: var(--navy); color: var(--white);}
 
 /* HEADER */
 header {
@@ -143,11 +143,13 @@ header .btn:hover { background: var(--gold); color: var(--navy); }
     .about-hero h1 { font-size: 32px; }
     .about-section { padding: 60px 20px; }
     .footer-content { text-align: center; }
+    
 }
 
 @media (max-width: 768px) {
     header img {
         height: 40px;
+        width: 35%;
     }
 
     .btn {
@@ -417,7 +419,7 @@ header .nav-links a:hover {
 @media(max-width:1024px){ .hero{height:54vh} .details .content{font-size:15px} }
 @media(max-width:768px){
   header{padding:12px 18px}
-  header img{height:44px}
+  header img{height:40px}
   .hero{height:46vh;background-attachment:scroll}
   .details{padding:24px 16px}
   .details .content{max-width:100%;font-size:15px}
@@ -434,14 +436,16 @@ header .nav-links a:hover {
 <body>
 
 <header>
-     <img src="images\header logo.png" alt="logo">  <!-- your logo here -->
+    
+        <img src="images\header-logo-removebg-preview.png" alt="logo"> <!-- your logo here -->
 
     <nav class="nav-links">
         <span class="close-nav">&times;</span>
         <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
+        <a href="about.html">About</a>
         <a href="services.html" id="active">Services</a>
         <a href="products.html">Products</a>
+        <a href="newsroom.html">Newsroom</a>
               <!-- for blogs we have to paste link of main landing page of your blogs-->
         <button class="btn" onclick="window.location.href='get-sample.html'">
     Get a Sample
@@ -468,7 +472,7 @@ header .nav-links a:hover {
     <div class="content" id="detail-content">
       <h2 id="detail-title">Service Title</h2>
       <p class="lead" id="detail-lead">Short intro lead for the service will appear here.</p>
-      <div id="detail-body" style="color: #e6e6e6;"></div>
+      <div id="detail-body" style="color: #e6e6e6; line-height: 30px; font-size: 16px;"></div>
       <button class="close-details" id="close-details">Close Details</button>
     </div>
   </div>
