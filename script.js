@@ -227,3 +227,71 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 fadeItems.forEach(item => observer.observe(item));
+
+
+
+const faders = document.querySelectorAll('.fade');
+
+const reveal = () => {
+  faders.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+      el.classList.add('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', reveal);
+reveal();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const triggerId = new URLSearchParams(window.location.search).get("trigger");
+  if (!triggerId) return;
+
+  const targetBtn = document.getElementById(triggerId);
+  if (targetBtn) {
+    setTimeout(() => {
+      targetBtn.click(); // 🔥 existing logic runs
+    }, 150);
+  }
+});
+
+const fadeUps = document.querySelectorAll(".fade-up");
+
+function revealFadeUp() {
+  fadeUps.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) {
+      el.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealFadeUp);
+revealFadeUp();
+
+
+
+const video = document.getElementById("rr-video-el");
+const textEl = document.getElementById("rr-video-text");
+
+const texts = [
+  "Reduce","Reuse","Recycle",
+  "Recover","Refuse","Rethink","Responsibility"
+];
+
+video.loop = true;
+video.play();
+
+video.addEventListener("timeupdate", () => {
+  const t = video.currentTime;
+
+  if (t < 14) {
+    const index = Math.floor(t / 2);
+    textEl.innerText = texts[index];
+  } else {
+    textEl.innerText = "With Rajratan";
+  }
+});
+
+video.addEventListener("ended", () => {
+  video.currentTime = 0; // reset timing
+});

@@ -484,28 +484,28 @@ header .nav-links a:hover {
     <div class="icon"><i class="fas fa-recycle" style="color:var(--gold);font-size:22px"></i></div>
     <h3>WASTE MINIMIZATION</h3>
     <p>Reducing industrial waste through process optimization and material recovery</p>
-    <a href="#" class="learn-more">LEARN MORE</a>
+    <a href="#" class="learn-more" id="btn-waste-minimization">LEARN MORE</a>
   </div>
 
   <div class="box" data-service="hazardous-waste">
     <div class="icon"><i class="fas fa-skull-crossbones" style="color:var(--gold);font-size:22px"></i></div>
     <h3>HAZARDOUS WASTE MANAGEMENT</h3>
     <p>Safe handling, storage, and disposal of dangerous inks and chemicals</p>
-    <a href="#" class="learn-more">LEARN MORE</a>
+    <a href="#" class="learn-more"  id="btn-hazardous-waste">LEARN MORE</a>
   </div>
 
   <div class="box" data-service="wastewater-treatment">
     <div class="icon"><i class="fas fa-water" style="color:var(--gold);font-size:22px"></i></div>
     <h3>WASTEWATER TREATMENT</h3>
     <p>Advanced purification methods for compliance and environmental protection</p>
-    <a href="#" class="learn-more">LEARN MORE</a>
+    <a href="#" class="learn-more"  id="btn-wastewater-treatment">LEARN MORE</a>
   </div>
 
   <div class="box" data-service="solid-waste">
     <div class="icon"><i class="fas fa-trash" style="color:var(--gold);font-size:22px"></i></div>
     <h3>SOLID WASTE MANAGEMENT</h3>
     <p>Comprehensive collection, recycling, and responsible disposal of industrial solids</p>
-    <a href="#" class="learn-more">LEARN MORE</a>
+    <a href="#" class="learn-more"  id="btn-solid-waste">LEARN MORE</a>
   </div>
 </section>
 
@@ -748,6 +748,20 @@ function revealFade(){
   });
 }
 window.addEventListener('load', revealFade);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const triggerId = new URLSearchParams(window.location.search).get("trigger");
+  if (!triggerId) return;
+
+  const btn = document.getElementById(triggerId);
+  if (!btn) return;
+
+  // wait until all click listeners are attached
+  setTimeout(() => {
+    btn.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+  }, 200);
+});
 
 
     </script>

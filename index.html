@@ -47,7 +47,7 @@
     <!-- HEADER -->
     <header>
         
-        <img src="images\header-logo-removebg-preview.png" width="14%" height="20%" alt="logo">
+        <img src="images\header-logo-removebg-preview.png" alt="logo">
 
     <nav class="nav-links">
       <span class="close-nav">&times;</span>
@@ -102,7 +102,7 @@
   <div class="rr-container">
     <h2 class="fade-up">Who we are ?</h2>
     <div class="rr-divider fade-up"></div>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <p class="fade-up">
       Rajratan Group is a professionally governed organization built on integrity,
       operational excellence, and a clear long-term vision. The group has steadily
@@ -121,9 +121,77 @@
       community development. Internally, it promotes a culture of accountability,
       collaboration, and professionalism, enabling sustainable value creation.
     </p>
+
+     <button class="btn" onclick="window.location.href='about.html'">Read more</button>
   </div>
 </section>
 
+
+
+<section class="what-we-do" id="what-we-do">
+  <section class="wwd-intro fade-up">
+  <h2>What We Do ?</h2>
+  <div class="underline"></div>
+
+  <p>
+    Rajratan Group delivers integrated environmental and industrial solutions
+    focused on sustainable growth and operational responsibility. We work
+    closely with industries to minimize waste, manage complex by-products,
+    and ensure regulatory compliance through efficient, technology-driven
+    processes.
+  </p>
+
+  <p>
+    Our approach combines operational discipline, environmental stewardship,
+    and long-term value creation—transforming challenges into scalable,
+    measurable solutions.
+  </p>
+</section>
+
+  <h2 class="wwd-title" style="font-size: 36px; font-weight: 300; margin-left: 100px; ">What we do ?</h2>
+
+  <div class="wwd-cards">
+
+    <div class="wwd-card fade" id="btn-waste-minimization">
+      <img src="images/Screenshot 2025-12-11 185711.png" alt="Waste Minimization">
+      <h3>Waste Minimization</h3>
+      <p>Reducing industrial waste through smarter processes and recovery.</p>
+      <a href="services.html?trigger=btn-waste-minimization">READ MORE →</a>
+    </div>
+
+    <div class="wwd-card fade" id="btn-hazardous-waste">
+      <img src="images/ink.png" alt="Hazardous Waste Management">
+      <h3>Hazardous Waste Management</h3>
+      <p>Safe handling, storage, and disposal of hazardous materials.</p>
+      <a href="services.html?trigger=btn-hazardous-waste">READ MORE →</a>
+    </div>
+
+    <div class="wwd-card fade" id="btn-wastewater-treatment">
+      <img src="images/waste-water.png" alt="Wastewater Treatment">
+      <h3>Wastewater Treatment</h3>
+      <p>Advanced purification systems for compliance and water reuse.</p>
+<a href="services.html?trigger=btn-wastewater-treatment">READ MORE →</a>
+    </div>
+
+    <div class="wwd-card fade" id="btn-solid-waste">
+      <img src="images/plastic.png" alt="Solid Waste Management">
+      <h3>Solid Waste Management</h3>
+      <p>Collection, recycling, and responsible disposal solutions.</p>
+      <a href="services.html?trigger=btn-solid-waste">READ MORE →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="rr-video">
+  <video id="rr-video-el" muted playsinline>
+    <source src="images/Video Project 3.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+  <h1 id="rr-video-text">Reduce</h1>
+</section>
 
 
 
@@ -138,160 +206,8 @@
     This approach helps our clients lower logistics costs, protect the
     environment, and improve operational efficiency.
   </p>
-  <button onclick="document.getElementById('sevenR-section').scrollIntoView({behavior:'smooth'})">
-    Read More
-  </button>
 </section>
 
-
-
-
-<!-- Icons CDN -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<section class="stats-strip">
-  <div class="stat">
-    <i class="fas fa-boxes"></i>
-    <h2 class="count" data-target="3600000">3.6M+</h2>
-    <p>Pallets</p>
-  </div>
-
-  <div class="stat">
-    <i class="fas fa-city"></i>
-    <h2 class="count" data-target="90">90+</h2>
-    <p>Cities</p>
-  </div>
-
-  <div class="stat">
-    <i class="fas fa-industry"></i>
-    <h2 class="count" data-target="2650">2650+</h2>
-    <p>Plants</p>
-  </div>
-
-</section>
-
-
-    <!-- TESTIMONIALS -->
-    <section class="testimonials">
-        <h2>Trusted by Industry Leaders</h2>
-
-        <div class="logos">
-            <img src='images\skypack-removebg-preview.png' alt="skypack" height="150px" width="220px" id="skypack">
-            <img src="images\patanjali-removebg-preview.png" alt="patanjali" height="50px" width="200px" style="margin-top: 50px;" id="patanjali">
-            <img src="images\nestle-removebg-preview.png" alt="nestle" height="180px" width="200px" id="nestle">
-            <img src="images\itc-removebg-preview.png" alt="itc" height="160px" width="200px" id="itc">
-            <img src="images\hul-removebg-preview.png" alt="hul" height="150px" width="250px" id="hul">
-            <img src="images\hcl-removebg-preview.png" alt="hcl" height="150px" width="150px" id="hcl">
-        </div>
-    </section>
-
-
-
-<section class="circular-economy">
-
-  <!-- Intro -->
-  <div class="ce-intro fade-in">
-    <h2 style="font-size: 38px; font-weight: 800; line-height: 50px;">CIRCULAR ECONOMY AND RAJRATAN’S SUSTAINABILITY MANUFACTURING LOOP</h2>
-    <p style="line-height: 30px;">
-      The circular economy marks a transformation from the conventional
-      linear industrial model—where resources are extracted, used once, and
-      discarded—to a regenerative system that keeps materials in circulation.
-      Instead of generating waste, industries functioning on circular principles
-      maximize resource efficiency by reusing, recycling, and reprocessing
-      materials across multiple lifecycles. This reduces environmental strain,
-      lowers production costs, and creates a smarter, cleaner industrial future.
-      <br><br>
-      Rajratan integrates circular economy principles deeply into its
-      manufacturing DNA. Every stage—from sourcing and processing to product
-      lifecycle and end-of-life material recovery—is engineered to ensure
-      minimal waste and maximum sustainability. Through innovation, recycling,
-      and energy-efficient operations, Rajratan transforms traditional wire
-      production into a continuous, regenerative loop that benefits both
-      industries and the environment.
-    </p>
-  </div>
-
-  <!-- Full Width Image -->
-  <div class="ce-image fade-up">
-    <img src="images\image2.png" alt="fields">
-  </div>
-
-  <!-- Section 1 -->
-  <div class="ce-block fade-up">
-    <div class="ce-text">
-      <h3>Recycling & Material Reintegration</h3>
-      <p style="line-height: 30px;">
-        One of the strongest pillars of Rajratan’s circular system is its
-        ability to recover and reprocess every possible material. During wire
-        production, metal scrap and by-products are not seen as waste but as
-        valuable resources. Using advanced metallurgical processes, these
-        materials are cleansed, refined, and reintegrated into fresh batches
-        of production. This reduces the dependency on virgin steel, lowers
-        manufacturing costs, and significantly cuts the carbon footprint.
-      </p>
-    </div>
-    <div class="ce-img">
-      <img src="images\download (2).jfif" alt="garbage">
-    </div>
-  </div>
-
-  <!-- Section 2 -->
-  <div class="ce-block reverse fade-up">
-    <div class="ce-text">
-      <h3>Energy-Optimized Manufacturing Cycle</h3>
-      <p style="line-height: 30px;">
-        Rajratan’s production units follow a meticulously engineered energy
-        optimization model. Heat recovery systems, digitally controlled
-        furnaces, and energy-efficient processes minimize wastage at every
-        step. This creates a circular loop of energy—not just materials—where
-        every unit of energy is used purposefully. The result is a leaner,
-        cleaner manufacturing ecosystem that performs at maximum output with
-        minimum environmental cost.
-      </p>
-    </div>
-    <div class="ce-img">
-      <img src="images\Our Process.jfif" alt="">
-    </div>
-  </div>
-
-  <!-- Section 3 -->
-  <div class="ce-block fade-up">
-    <div class="ce-text">
-      <h3>Extended Product Lifecycles</h3>
-      <p style="line-height: 30px;">
-        Every Rajratan wire product is designed to last longer than conventional
-        alternatives. Longer lifecycle means reduced replacements, which directly
-        reduces the demand for new raw materials. This approach aligns perfectly
-        with circular economy principles—maximizing the value extracted from
-        every resource and minimizing environmental impact over time.
-      </p>
-    </div>
-    <div class="ce-img">
-      <img src="https://images.unsplash.com/photo-1503387829061-7e84c0038c59?q=80&w=1400" alt="">
-    </div>
-  </div>
-
-  <!-- Section 4 -->
-  <div class="ce-block reverse fade-up">
-    <div class="ce-text">
-      <h3>End-of-Life Material Recovery</h3>
-        <div class="ce-img">
-      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1400" alt="">
-    </div>
-    <br><br><br>
-      <p style="line-height: 30px;">
-        Rajratan encourages a responsible, closed-loop approach even after the
-        end of a product’s usable life. Old or damaged wire materials are
-        collected, processed, and recycled into new production cycles. This
-        ensures nothing goes to waste and every component contributes to a
-        regenerative, circular manufacturing system.
-      </p>
-    </div>
-  
-  </div>
-
-</section>
 
 
   
@@ -441,6 +357,156 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 </section>
 
 
+
+
+
+<section class="circular-economy">
+
+  <!-- Intro -->
+  <div class="ce-intro fade-in">
+    <h2 style="font-size: 38px; font-weight: 800; line-height: 50px;">CIRCULAR ECONOMY AND RAJRATAN’S SUSTAINABILITY MANUFACTURING LOOP</h2>
+    <p style="line-height: 30px;">
+      The circular economy marks a transformation from the conventional
+      linear industrial model—where resources are extracted, used once, and
+      discarded—to a regenerative system that keeps materials in circulation.
+      Instead of generating waste, industries functioning on circular principles
+      maximize resource efficiency by reusing, recycling, and reprocessing
+      materials across multiple lifecycles. This reduces environmental strain,
+      lowers production costs, and creates a smarter, cleaner industrial future.
+      <br><br>
+      Rajratan integrates circular economy principles deeply into its
+      manufacturing DNA. Every stage—from sourcing and processing to product
+      lifecycle and end-of-life material recovery—is engineered to ensure
+      minimal waste and maximum sustainability. Through innovation, recycling,
+      and energy-efficient operations, Rajratan transforms traditional wire
+      production into a continuous, regenerative loop that benefits both
+      industries and the environment.
+    </p>
+  </div>
+
+  <!-- Full Width Image -->
+  <div class="ce-image fade-up">
+    <img src="images\image2.png" alt="fields">
+  </div>
+
+  <!-- Section 1 -->
+  <div class="ce-block fade-up">
+    <div class="ce-text">
+      <h3>Recycling & Material Reintegration</h3>
+      <p style="line-height: 30px;">
+        One of the strongest pillars of Rajratan’s circular system is its
+        ability to recover and reprocess every possible material. During wire
+        production, metal scrap and by-products are not seen as waste but as
+        valuable resources. Using advanced metallurgical processes, these
+        materials are cleansed, refined, and reintegrated into fresh batches
+        of production. This reduces the dependency on virgin steel, lowers
+        manufacturing costs, and significantly cuts the carbon footprint.
+      </p>
+    </div>
+    <div class="ce-img">
+      <img src="images\download (2).jfif" alt="garbage">
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="ce-block reverse fade-up">
+    <div class="ce-text">
+      <h3>Energy-Optimized Manufacturing Cycle</h3>
+      <p style="line-height: 30px;">
+        Rajratan’s production units follow a meticulously engineered energy
+        optimization model. Heat recovery systems, digitally controlled
+        furnaces, and energy-efficient processes minimize wastage at every
+        step. This creates a circular loop of energy—not just materials—where
+        every unit of energy is used purposefully. The result is a leaner,
+        cleaner manufacturing ecosystem that performs at maximum output with
+        minimum environmental cost.
+      </p>
+    </div>
+    <div class="ce-img">
+      <img src="images\Our Process.jfif" alt="">
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="ce-block fade-up">
+    <div class="ce-text">
+      <h3>Extended Product Lifecycles</h3>
+      <p style="line-height: 30px;">
+        Every Rajratan wire product is designed to last longer than conventional
+        alternatives. Longer lifecycle means reduced replacements, which directly
+        reduces the demand for new raw materials. This approach aligns perfectly
+        with circular economy principles—maximizing the value extracted from
+        every resource and minimizing environmental impact over time.
+      </p>
+    </div>
+    <div class="ce-img">
+      <img src="https://images.unsplash.com/photo-1503387829061-7e84c0038c59?q=80&w=1400" alt="">
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="ce-block reverse fade-up">
+    <div class="ce-text">
+      <h3>End-of-Life Material Recovery</h3>
+        <div class="ce-img">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1400" alt="">
+    </div>
+    <br><br><br>
+      <p style="line-height: 30px;">
+        Rajratan encourages a responsible, closed-loop approach even after the
+        end of a product’s usable life. Old or damaged wire materials are
+        collected, processed, and recycled into new production cycles. This
+        ensures nothing goes to waste and every component contributes to a
+        regenerative, circular manufacturing system.
+      </p>
+    </div>
+  
+  </div>
+
+</section>
+
+
+
+
+<!-- Icons CDN -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section class="stats-strip">
+  <div class="stat">
+    <i class="fas fa-boxes"></i>
+    <h2 class="count" data-target="3600000">3.6M+</h2>
+    <p>Pallets</p>
+  </div>
+
+  <div class="stat">
+    <i class="fas fa-city"></i>
+    <h2 class="count" data-target="90">90+</h2>
+    <p>Cities</p>
+  </div>
+
+  <div class="stat">
+    <i class="fas fa-industry"></i>
+    <h2 class="count" data-target="2650">2650+</h2>
+    <p>Plants</p>
+  </div>
+
+</section>
+
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <h2>Trusted by Industry Leaders</h2>
+
+        <div class="logos">
+            <img src='images\skypack-removebg-preview.png' alt="skypack" height="150px" width="220px" id="skypack">
+            <img src="images\patanjali-removebg-preview.png" alt="patanjali" height="50px" width="200px" style="margin-top: 50px;" id="patanjali">
+            <img src="images\nestle-removebg-preview.png" alt="nestle" height="180px" width="200px" id="nestle">
+            <img src="images\itc-removebg-preview.png" alt="itc" height="160px" width="200px" id="itc">
+            <img src="images\hul-removebg-preview.png" alt="hul" height="150px" width="250px" id="hul">
+            <img src="images\hcl-removebg-preview.png" alt="hcl" height="150px" width="150px" id="hcl">
+        </div>
+    </section>
 
 
 <!-- FOOTER -->
