@@ -11,9 +11,11 @@
             font-family: "Poppins", sans-serif;
         }
 
-        body {
+        html,body {
             background: var(--navy);
             color: var(--white);
+            width: 100%;
+            overflow-x: hidden;
         }
 
         /* HEADER */
@@ -210,6 +212,10 @@ header .nav-links a:hover {
     header .btn {
         width: 150px;
         text-align: center;
+    }
+    body{
+      overflow-x: hidden;
+      width: 100%;
     }
 }
 
@@ -1104,12 +1110,18 @@ header .nav-links a:hover {
   .rr-intro p {
     font-size: 16px;
   }
+  .rr-intro img{
+    width: 440px;
+  }
 }
 
 .what-we-do {
   background: #0a0f2d;
   padding: 80px 8%;
   color: #fff;
+}
+.what-we-do p{
+  line-height: 10px;
 }
 
 .wwd-title {
@@ -1232,6 +1244,7 @@ header .nav-links a:hover {
   .wwd-intro p {
     font-size: 15px;
   }
+
 }
 
 
@@ -1380,3 +1393,5 @@ header .nav-links a:hover {
 
   .rr-img img{ width:100%; }
 }
+
+
