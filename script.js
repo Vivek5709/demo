@@ -274,8 +274,8 @@ const video = document.getElementById("rr-video-el");
 const textEl = document.getElementById("rr-video-text");
 
 const texts = [
-  "Reduce","Reuse","Recycle",
-  "Recover","Refuse","Rethink","Responsibility"
+  "Research","Renovate","Recharge",
+  "Reduse","Reuse","Recycle","Recover"
 ];
 
 video.loop = true;
@@ -310,3 +310,17 @@ const obs = new IntersectionObserver(entries=>{
 fades.forEach(el=>obs.observe(el));
 
 
+
+let lastScroll = 0;
+const nav = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  const current = window.pageYOffset;
+
+  if (current > lastScroll && current > 80) {
+    nav.classList.add("hide");   // scroll down → hide
+  } else {
+    nav.classList.remove("hide"); // scroll up → show
+  }
+  lastScroll = current;
+});

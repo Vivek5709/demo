@@ -56,6 +56,14 @@ header {
     display: flex; justify-content: space-between; align-items: center;
     background: var(--navy); position: sticky; top: 0; z-index: 100;
      border-bottom:1px solid #f7c873;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+header.hide{
+  transform: translateY(-100%);
 }
 header img { height: 50px; }
 header .btn {
@@ -351,6 +359,7 @@ header .nav-links a:hover {
 
 
 .hero{
+    padding-top: 100px;
   height:62vh;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   text-align:center;
@@ -763,6 +772,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 200);
 });
 
+
+
+let lastScroll = 0;
+const nav = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  const current = window.pageYOffset;
+
+  if (current > lastScroll && current > 80) {
+    nav.classList.add("hide");   // scroll down → hide
+  } else {
+    nav.classList.remove("hide"); // scroll up → show
+  }
+  lastScroll = current;
+});
 
     </script>
 </body>

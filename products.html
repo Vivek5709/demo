@@ -52,6 +52,14 @@ header {
     display: flex; justify-content: space-between; align-items: center;
     background: var(--navy); position: sticky; top: 0; z-index: 100;
      border-bottom:1px solid #f7c873;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+header.hide{
+  transform: translateY(-100%);
 }
 header img { height: 50px; }
 header .btn {
@@ -168,11 +176,13 @@ header .btn:hover { background: var(--gold); color: var(--navy); }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 28px;
+        font-size: 38px;
+        font-weight: 800;
     }
 
     .hero p {
-        font-size: 14px;
+        font-size: 16px;
+        line-height: 2;
     }
 
     .logos {
@@ -319,7 +329,8 @@ header .nav-links a:hover {
 }
 .product-hero h1 {
     color: var(--gold);
-    font-size: 48px;
+    font-size: 38px;
+    font-weight: 800;
 }
 
 /* PRODUCT SECTION */
@@ -463,6 +474,7 @@ header .nav-links a:hover {
 
 /* HERO */
 .hero-product {
+  padding-top: 100px;
   height: 480px;
   background: url('images/product/pro-hero.png') no-repeat right center;
   background-size:cover;
@@ -656,7 +668,9 @@ header .nav-links a:hover {
 }
 
 .pac-content {
-    max-width: 900px;
+    max-width: 1150px;
+    font-size: 16px;
+    line-height: 2;
     background-color: white;
     color: var(--navy);
 }
@@ -1005,6 +1019,94 @@ section.visible {
 
   <div class="product-grid">
 
+    
+    
+    <!-- Product 2 -->
+    <div class="product-card" data-category="indoor">
+      <img src="images\product\case in.png" alt="Product 2">
+      <h3 class="product-name">Product 14</h3>
+
+      <ul class="details">
+        <li>Height: 300mm</li>
+        <li>Width: 200mm</li>
+        <li>Thickness: 15mm</li>
+        <li>Rate: ₹52 / piece</li>
+      </ul>
+
+      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
+    </div>
+      <div class="product-card" data-category="indoor">
+      <img src="images\product\furniture in.png" alt="Product 2">
+      <h3 class="product-name">Product 15</h3>
+
+      <ul class="details">
+        <li>Height: 300mm</li>
+        <li>Width: 200mm</li>
+        <li>Thickness: 15mm</li>
+        <li>Rate: ₹52 / piece</li>
+      </ul>
+
+      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
+    </div>
+
+      <div class="product-card" data-category="indoor">
+      <img src="images\product\large bench in.png" alt="Product 2">
+      <h3 class="product-name">Product 16</h3>
+
+      <ul class="details">
+        <li>Height: 300mm</li>
+        <li>Width: 200mm</li>
+        <li>Thickness: 15mm</li>
+        <li>Rate: ₹52 / piece</li>
+      </ul>
+
+      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
+    </div>
+
+      <div class="product-card" data-category="indoor">
+      <img src="images\product\office furniture in.png" alt="Product 2">
+      <h3 class="product-name">Product 17</h3>
+
+      <ul class="details">
+        <li>Height: 300mm</li>
+        <li>Width: 200mm</li>
+        <li>Thickness: 15mm</li>
+        <li>Rate: ₹52 / piece</li>
+      </ul>
+
+      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
+    </div>
+
+      <div class="product-card" data-category="indoor">
+      <img src="images\product\partion room in.png" alt="Product 2">
+      <h3 class="product-name">Product 18</h3>
+
+      <ul class="details">
+        <li>Height: 300mm</li>
+        <li>Width: 200mm</li>
+        <li>Thickness: 15mm</li>
+        <li>Rate: ₹52 / piece</li>
+      </ul>
+
+      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
+    </div>
+
+      <div class="product-card" data-category="indoor">
+      <img src="images\product\small bench.png" alt="Product 2">
+      <h3 class="product-name">Product 19</h3>
+
+      <ul class="details">
+        <li>Height: 300mm</li>
+        <li>Width: 200mm</li>
+        <li>Thickness: 15mm</li>
+        <li>Rate: ₹52 / piece</li>
+      </ul>
+
+      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
+    </div>
+
+
+
     <!-- Product 1 -->
     <div class="product-card" data-category="outdoor">
       <img src="images\product\black chair out.png" alt="Product 1">
@@ -1178,94 +1280,6 @@ section.visible {
 
 
 
-    <!-- Product 2 -->
-    <div class="product-card" data-category="indoor">
-      <img src="images\product\case in.png" alt="Product 2">
-      <h3 class="product-name">Product 14</h3>
-
-      <ul class="details">
-        <li>Height: 300mm</li>
-        <li>Width: 200mm</li>
-        <li>Thickness: 15mm</li>
-        <li>Rate: ₹52 / piece</li>
-      </ul>
-
-      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
-    </div>
-      <div class="product-card" data-category="indoor">
-      <img src="images\product\furniture in.png" alt="Product 2">
-      <h3 class="product-name">Product 15</h3>
-
-      <ul class="details">
-        <li>Height: 300mm</li>
-        <li>Width: 200mm</li>
-        <li>Thickness: 15mm</li>
-        <li>Rate: ₹52 / piece</li>
-      </ul>
-
-      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
-    </div>
-
-      <div class="product-card" data-category="indoor">
-      <img src="images\product\large bench in.png" alt="Product 2">
-      <h3 class="product-name">Product 16</h3>
-
-      <ul class="details">
-        <li>Height: 300mm</li>
-        <li>Width: 200mm</li>
-        <li>Thickness: 15mm</li>
-        <li>Rate: ₹52 / piece</li>
-      </ul>
-
-      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
-    </div>
-
-      <div class="product-card" data-category="indoor">
-      <img src="images\product\office furniture in.png" alt="Product 2">
-      <h3 class="product-name">Product 17</h3>
-
-      <ul class="details">
-        <li>Height: 300mm</li>
-        <li>Width: 200mm</li>
-        <li>Thickness: 15mm</li>
-        <li>Rate: ₹52 / piece</li>
-      </ul>
-
-      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
-    </div>
-
-      <div class="product-card" data-category="indoor">
-      <img src="images\product\partion room in.png" alt="Product 2">
-      <h3 class="product-name">Product 18</h3>
-
-      <ul class="details">
-        <li>Height: 300mm</li>
-        <li>Width: 200mm</li>
-        <li>Thickness: 15mm</li>
-        <li>Rate: ₹52 / piece</li>
-      </ul>
-
-      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
-    </div>
-
-      <div class="product-card" data-category="indoor">
-      <img src="images\product\small bench.png" alt="Product 2">
-      <h3 class="product-name">Product 19</h3>
-
-      <ul class="details">
-        <li>Height: 300mm</li>
-        <li>Width: 200mm</li>
-        <li>Thickness: 15mm</li>
-        <li>Rate: ₹52 / piece</li>
-      </ul>
-
-      <button class="copy-btn" onclick="copyName(this)">Copy Name</button>
-    </div>
-
-
-
-
-  
 
   <div class="product-card" data-category="panels">
       <img src='images\product\brick other.png' alt="Product 2">
@@ -1569,6 +1583,21 @@ document.getElementById("viewProductsBtn").addEventListener("click", function() 
     document.getElementById("products-section").scrollIntoView({
         behavior: "smooth"
     });
+});
+
+
+let lastScroll = 0;
+const nav = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  const current = window.pageYOffset;
+
+  if (current > lastScroll && current > 80) {
+    nav.classList.add("hide");   // scroll down → hide
+  } else {
+    nav.classList.remove("hide"); // scroll up → show
+  }
+  lastScroll = current;
 });
 </script>
 

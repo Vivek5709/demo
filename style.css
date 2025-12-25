@@ -30,7 +30,15 @@
             top: 0;
             z-index: 99;
             border-bottom:1px solid #f7c873;
+            position: fixed;
+  transition: transform 0.3s ease;
+  
         }
+
+        
+header.hide{
+  transform: translateY(-100%);
+}
 
         header img {
             height: 50px;   /* your logo size */
@@ -742,14 +750,16 @@ header .nav-links a:hover {
   transform: scale(1.1);
 }
 .hero {
+  padding-top: 100px;
   position: relative;
-  height: 90vh;
+  height: 95vh;
   width: 100%;
   background: #01172f;
   overflow:hidden;
 }
 
 .video-wrap {
+  padding-top: 50px;
   position: absolute;
   right: 0;
   top: 10%;
