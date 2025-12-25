@@ -11,7 +11,7 @@
 <link rel="canonical" href="https://rajratan.in/">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="images\header logo.png">
+<link rel="icon" type="image/png" href="images\header n footer\header logo.png">
 
 <!-- Search Engine Robots -->
 <meta name="robots" content="index, follow">
@@ -344,6 +344,66 @@ header .nav-links a:hover {
     }
 }
 
+
+#newsroom-hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.event-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.event-slide.active {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.event-content {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  color: #fff;
+  z-index: 2;
+}
+
+.event-content h1 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.event-content p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .event-content {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    bottom: 12%;
+  }
+
+  .event-content h1 {
+    font-size: 26px;
+  }
+}
+
+
 </style>
 </head>
 
@@ -351,7 +411,7 @@ header .nav-links a:hover {
 
 <header>
     
-        <img src="images\header-logo-removebg-preview.png" alt="logo">  <!-- your logo here -->
+        <img src="images\header n footer\header-logo-removebg-preview.png" alt="logo">  <!-- your logo here -->
 
     <nav class="nav-links">
         <span class="close-nav">&times;</span>
@@ -373,12 +433,38 @@ header .nav-links a:hover {
     </div>
 </header>
 
+
+
+<section id="newsroom-hero">
+  <div class="event-slide active" style="background-image:url('images/newsroom/green future summit.png')">
+    <div class="overlay"></div>
+    <div class="event-content">
+      <h1>Green Future Summit</h1>
+      <p>12 March 2025 · Mumbai, India</p>
+    </div>
+  </div>
+
+  <div class="event-slide" style="background-image:url('images/newsroom/sustainability expo.png')">
+    <div class="overlay"></div>
+    <div class="event-content">
+      <h1>Sustainability Expo</h1>
+      <p>28 April 2025 · Pune, India</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
 <!-- FOOTER -->
 <footer class="footer fade-up">
 
     <div class="footer-content">
         <div class="footer-left">
-            <img src="images\Rajratan Logo High Pixel (6).png" alt="Rajratan Logo" class="footer-logo">
+            <img src="images\header n footer\Rajratan Logo High Pixel (6).png" alt="Rajratan Logo" class="footer-logo">
         </div>
 
         <div class="footer-center">
@@ -397,10 +483,10 @@ header .nav-links a:hover {
     </div>
 
      <div class="footer-social">
-       <a href="https://www.facebook.com/share/16d88NDfY2/"><img src="images\meta.png" alt="facebook"></a>
-        <a href="https://x.com/Rajratangroup?s=20"><img src="images\x.png" alt="twitter"></a>
-        <a href="https://www.instagram.com/rajratanindia?igsh=MTZtNDBkM2R6c3B6eA=="><img src="images\Screenshot 2025-11-26 160452.png" alt="instagram"></a>
-        <a href="https://youtube.com/@rajratanindia?feature=shared"><img src="images\youtube.png" alt="youtube"></a>
+       <a href="https://www.facebook.com/share/16d88NDfY2/"><img src="images\header n footer\meta.png" alt="facebook"></a>
+        <a href="https://x.com/Rajratangroup?s=20"><img src="images\header n footer\x.png" alt="twitter"></a>
+        <a href="https://www.instagram.com/rajratanindia?igsh=MTZtNDBkM2R6c3B6eA=="><img src="images\header n footer\Screenshot 2025-11-26 160452.png" alt="instagram"></a>
+        <a href="https://youtube.com/@rajratanindia?feature=shared"><img src="images\header n footer\youtube.png" alt="youtube"></a>
     </div>
 
 </footer>
@@ -461,6 +547,18 @@ const closeNav = document.querySelector(".close-nav");
 closeNav.addEventListener("click", () => {
     navLinks.classList.remove("active");
 });
+
+
+(() => {
+  const slides = document.querySelectorAll(".event-slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000);
+})();
 
 </script>
 

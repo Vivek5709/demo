@@ -295,3 +295,18 @@ video.addEventListener("timeupdate", () => {
 video.addEventListener("ended", () => {
   video.currentTime = 0; // reset timing
 });
+
+
+
+
+const fades = document.querySelectorAll('.fade-right,.fade-left,.fade-up');
+
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+},{threshold:0.2});
+
+fades.forEach(el=>obs.observe(el));
+
+
