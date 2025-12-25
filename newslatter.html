@@ -403,6 +403,156 @@ header .nav-links a:hover {
   }
 }
 
+.rr-newsroom{
+  background:#fff;
+  padding:80px 8%;
+}
+
+.rr-news-intro{
+  max-width:800px;
+  margin-bottom:40px;
+}
+
+.rr-news-intro h2{
+  font-size:36px;
+  font-weight:800;
+  color:#0a0f2d;
+}
+
+.rr-news-intro p{
+  line-height:1.7;
+  opacity:.85;
+  color: rgb(44, 43, 43);
+}
+
+/* Masonry layout */
+.rr-news-masonry{
+  column-count:3;
+  column-gap:30px;
+}
+
+.rr-news-masonry img{
+  width:100%;
+  margin-bottom:30px;
+  border-radius:12px;
+  box-shadow:0 18px 40px rgba(0,0,0,.08);
+  break-inside:avoid;
+}
+
+/* Fade animation */
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Tablet */
+@media(max-width:992px){
+  .rr-news-masonry{ column-count:2; }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .rr-news-masonry{ column-count:1; }
+  .rr-news-intro h2{ font-size:28px; }
+}
+
+
+.rr-magazine{
+  padding:70px 8%;
+  background:#f8f9fb;
+  text-align:center;
+}
+
+.rr-magazine h3{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:40px;
+  color:#0a0f2d;
+}
+
+.rr-magazine-grid{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.rr-magazine-grid img{
+  max-width:320px;       /* keeps covers realistic */
+  width:100%;
+  height:auto;           /* natural ratio */
+  border-radius:14px;
+  box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+/* Fade animation */
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.9s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .rr-magazine h3{ font-size:22px; }
+  .rr-magazine-grid{ gap:25px; }
+}
+
+.rr-future{
+  background:#0a0f2d;
+  color:#ffffff;
+  padding:100px 8%;
+}
+
+.rr-future-content{
+  max-width:900px;
+}
+
+.rr-future-content h2{
+  font-size:42px;
+  font-weight:800;
+  margin-bottom:25px;
+}
+
+.rr-future-content p{
+  font-size:16px;
+  line-height:1.9;
+  opacity:.9;
+  margin-bottom:18px;
+}
+
+/* Fade animation */
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.9s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .rr-future{
+    padding:70px 6%;
+  }
+  .rr-future-content h2{
+    font-size:30px;
+  }
+}
 
 </style>
 </head>
@@ -444,6 +594,14 @@ header .nav-links a:hover {
     </div>
   </div>
 
+   <div class="event-slide active" style="background-image:url('images/newsroom/techfest.png')">
+    <div class="overlay"></div>
+    <div class="event-content">
+      <h1>Techfest</h1>
+      <p>12 March 2025 · Mumbai, India</p>
+    </div>
+  </div>
+
   <div class="event-slide" style="background-image:url('images/newsroom/sustainability expo.png')">
     <div class="overlay"></div>
     <div class="event-content">
@@ -454,8 +612,54 @@ header .nav-links a:hover {
 </section>
 
 
+<section class="rr-newsroom" id="rr-newsroom">
+  <div class="rr-news-intro fade-in">
+    <h2>Rajratan in news</h2>
+    <p>
+      Rajratan Group continues to gain national recognition through reputed newspapers
+      for its leadership in sustainability, innovation, and responsible manufacturing.
+    </p><br><br>
+  </div>
+
+  <div class="rr-news-masonry">
+    <img src="images/newsroom/news 1.png" class="fade-in">
+    <img src="images/newsroom/news 2.png" class="fade-in">
+    <img src="images/newsroom/news 3.png" class="fade-in">
+    <img src="images/newsroom/news 4.png" class="fade-in">
+    <img src="images/newsroom/news 5.png" class="fade-in">
+  </div>
+</section>
 
 
+<section class="rr-magazine">
+  <h3 class="fade-in">Featured Magazines</h3>
+
+  <div class="rr-magazine-grid">
+    <img src="images/newsroom/magazine cover 1.png" class="fade-in" alt="Magazine Cover 1">
+    <img src="images/newsroom/magazine cover 2.png" class="fade-in" alt="Magazine Cover 2">
+  </div>
+</section>
+
+
+<section class="rr-future">
+  <div class="rr-future-content fade-in">
+    <h2>We Are Not Stopping Here</h2>
+    <p>
+      We are not stopping here. At Rajratan, our journey is driven by a vision that looks
+      beyond the present and towards a more responsible, sustainable future. As industries
+      evolve and environmental challenges grow, we continue to innovate with purpose,
+      ensuring that progress and sustainability move forward together.
+    </p>
+    <p>
+      Our focus remains on expanding eco-friendly manufacturing, strengthening circular
+      economy practices, and adopting technologies that reduce environmental impact while
+      delivering long-term value. Through research, collaboration, and responsible leadership,
+      we aim to shape industries that respect nature, empower communities, and inspire
+      positive change. The road ahead is ambitious, and we are committed to walking it with
+      integrity, resilience, and a clear responsibility toward generations to come.
+    </p>
+  </div>
+</section>
 
 
 
@@ -496,6 +700,8 @@ header .nav-links a:hover {
 
 <!-- Floating Chat Icon -->
 <div id="chat-launcher" onclick="openChatWithWave()">💬</div>
+
+
 
 <script>
 function revealScroll(){
@@ -549,16 +755,40 @@ closeNav.addEventListener("click", () => {
 });
 
 
-(() => {
-  const slides = document.querySelectorAll(".event-slide");
-  let index = 0;
+const faders = document.querySelectorAll('.fade-in');
 
-  setInterval(() => {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
-  }, 5000);
-})();
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{ threshold:0.15 });
+
+faders.forEach(el => observer.observe(el));
+
+
+const items = document.querySelectorAll('.fade-in');
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+},{threshold:0.2});
+items.forEach(i=>io.observe(i));
+
+
+const slides = document.querySelectorAll('#newsroom-hero .event-slide');
+let current = 0;
+
+function showNextSlide() {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}
+
+// change slide every 5 seconds
+setInterval(showNextSlide, 5000);
+
 
 </script>
 
