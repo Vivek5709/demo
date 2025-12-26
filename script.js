@@ -324,3 +324,42 @@ window.addEventListener("scroll", () => {
   }
   lastScroll = current;
 });
+
+
+
+const dots = [...document.querySelectorAll(".rr-dot")];
+const visibleDots = dots.filter(d => !d.classList.contains("rr-footer-dot"));
+const map = [];
+
+// map dots to sections
+dots.forEach(dot=>{
+  const key = dot.dataset.target;
+  const el =
+    document.getElementById(key) ||
+    document.querySelector(`.${key}`);
+
+  if(el) map.push({ dot, el });
+
+  dot.addEventListener("click", ()=>{
+    if(el) el.scrollIntoView({ behavior:"smooth", block:"start" });
+  });
+});
+
+const ob= new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      dots.forEach(d => d.classList.remove("active"));
+
+      const index = map.findIndex(i => i.el === entry.target);
+
+      // if footer → activate previous (Events)
+      if(index === map.length - 1){
+        visibleDots[visibleDots.length - 1].classList.add("active");
+      }else{
+        map[index].dot.classList.add("active");
+      }
+    }
+  });
+},{ threshold:0.6 });
+
+map.forEach(i => ob.observe(i.el));

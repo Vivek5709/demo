@@ -1406,3 +1406,64 @@ header .nav-links a:hover {
 
 
 
+
+
+.rr-scroll-indicator{
+  position:fixed;
+  left:32px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  z-index:999;
+}
+
+.rr-dot{
+  width:14px;
+  height:14px;
+  border:2px solid var(--gold);
+  border-radius:50px;
+  background:transparent;
+  cursor:pointer;
+  position:relative;
+  transition:height .45s cubic-bezier(.4,0,.2,1), background .45s ease;
+}
+
+.rr-dot.active{
+  height:62px;
+  background:var(--gold);
+}
+
+.rr-dot::after{
+  content:attr(data-label);
+  position:absolute;
+  left:28px;
+  top:50%;
+  transform:translateY(-50%) translateX(-10px);
+  background:var(--gold);
+  color:var(--navy);
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:4px;
+  white-space:nowrap;
+  opacity:0;
+  transition:.4s ease;
+}
+
+.rr-dot.active::after{
+  opacity:1;
+  transform:translateY(-50%) translateX(0);
+}
+
+/* footer dot hidden */
+.rr-footer-dot{
+  display:none;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .rr-dot{
+    display: none;
+  }
+}
